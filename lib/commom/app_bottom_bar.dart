@@ -7,8 +7,8 @@ class AppBottomBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40),
-          topRight: Radius.circular(40),
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
         ),
       ),
       padding: EdgeInsets.only(bottom: 18, left: 24, right: 24, top: 16),
