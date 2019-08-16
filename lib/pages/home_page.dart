@@ -97,14 +97,15 @@ class _HomePageState extends State<HomePage>
   }
 
   _handleVerticalUpdate(DragUpdateDetails updateDetails){
-    print("update ${updateDetails.primaryDelta}");
-
     double fractionDragged = updateDetails.primaryDelta / screenHeight;
-    print(fractionDragged);
     _controller.value = _controller.value - 5 * fractionDragged;
   }
 
   _handleVerticalEnd(DragEndDetails endDetails){
-
+    if(_controller.value >= 0.5){
+      _controller.forward();
+    } else {
+      _controller.reverse();
+    }
   }
 }
