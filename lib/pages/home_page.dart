@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_responsible_ui/commom/app_bottom_bar.dart';
+import 'package:flutter_responsible_ui/widgets/profile_page_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,11 +50,13 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       backgroundColor: Color(0xFFEEEEEE),
       bottomNavigationBar: AppBottomBar(),
-      body: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return getWidget();
-        },
+      body: SafeArea(
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return getWidget();
+          },
+        ),
       ),
     );
   }
@@ -65,12 +68,7 @@ class _HomePageState extends State<HomePage>
         FractionallySizedBox(
           alignment: Alignment.topCenter,
           heightFactor: _heightFactorAnimation.value,
-          child: Image.asset(
-            "assets/images/tokyo.jpg",
-            fit: BoxFit.cover,
-//            colorBlendMode: BlendMode.hue,
-//            color: Colors.black,
-          ),
+          child: ProfilePageView(),
         ),
         GestureDetector(
           onTap: () {
@@ -96,13 +94,13 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  _handleVerticalUpdate(DragUpdateDetails updateDetails){
+  _handleVerticalUpdate(DragUpdateDetails updateDetails) {
     double fractionDragged = updateDetails.primaryDelta / screenHeight;
     _controller.value = _controller.value - 5 * fractionDragged;
   }
 
-  _handleVerticalEnd(DragEndDetails endDetails){
-    if(_controller.value >= 0.5){
+  _handleVerticalEnd(DragEndDetails endDetails) {
+    if (_controller.value >= 0.5) {
       _controller.forward();
     } else {
       _controller.reverse();
