@@ -95,19 +95,3 @@ final List<Profile> profiles = [
       following: "1,5k"
   ),
 ];
-
-//Image.asset(
-////      "assets/images/illaoi.jpg",
-////      "assets/images/akali.jpg",
-////      "assets/images/pantheon.jpg",
-////      "assets/images/darius.jpg",
-////      "assets/images/jhin.jpg",
-////      "",
-////      "assets/images/garen.jpg",
-////      "assets/images/kayn.jpg",
-////      "assets/images/oriana.jpg",
-////      "assets/images/mf.jpg",
-//"assets/images/sivir.jpg",
-////      "assets/images/pike.jpg",
-//fit: BoxFit.cover,
-//);
